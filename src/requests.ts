@@ -5,10 +5,16 @@ interface UserProps {
   email: string;
   password: string;
 }
-export const signUpNewuser = async ({ email, password }: UserProps) => {
+export const signUpNewuser = async ({ email, password, name }: UserProps) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      data: {
+        name,
+        email,
+      },
+    },
   });
   if (error) {
     console.log(error);

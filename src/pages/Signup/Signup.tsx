@@ -67,9 +67,9 @@ const Signup = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      navigate("/instruction");
+      navigate("/dashboard");
     }
-  }, []);
+  }, [user]);
   return (
     <div className={styles.main}>
       <h1>Signup</h1>
